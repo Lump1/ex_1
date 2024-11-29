@@ -36,5 +36,7 @@
     ]
   },
   "devDependencies": {
-  }
+  },
+  
+  "proxy": "https://dog-api.kinduff.com/api"
 }

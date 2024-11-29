@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -63,6 +63,7 @@ class Content extends React.Component {
   render() {
     return <main>
       {this.props.text}
+      <CatFactsWrapper number={5}></CatFactsWrapper>
     </main>;
   }
 }
@@ -150,6 +151,39 @@ class DateTime extends React.Component {
   }
 }
 
+function useCatFacts(number) {
+  const [data, setData] = useState([]);
+  const [numberState, setNumber] = useState(number);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=' + numberState);
+        if (!response.ok) {
+          throw new Error('Ошибка при загрузке данных'); 
+        }
+        const result = await response.json();
+        setData(result); 
+
+      } catch (err) {
+        console.error("Something went wrong with data extraction: " + err);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  return data;
+}
+
+function CatFactsWrapper({ number }) {
+  const data = useCatFacts(number);
+
+  return (
+    <Menu lists={data}></Menu>
+  );
+}
+
 DateTime.CurrentDate = CurrentDate;
 DateTime.CurrentTime = CurrentTime;
 
@@ -161,7 +195,9 @@ root.render(
     <div className='flexable column help-container'>
       <div className='flexable main-container'> 
         <SideBar text="SideBar" lists={[{text: "someText1"}, {text: "someText2", url: "https://music.youtube.com/watch?v=y88PeNOXS9I&si=CZWXtxhoeOINhLCG"}, {text: "someText3", url: `${window.location.href}documentation`}]} />
-        <Content text="Content" />
+        <Content text="Content">
+
+        </Content>
       </div>
       <Footer text="Footer" lists={[{text: "someText1"}, {text: "someText2", url: "https://music.youtube.com/watch?v=y88PeNOXS9I&si=CZWXtxhoeOINhLCG"}, {text: "someText3", url: `${window.location.href}documentation`}]}/>
     </div>
