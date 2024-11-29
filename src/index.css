@@ -12,13 +12,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column; /* Ensures a vertical column layout */
 }
 
 header {
   position: sticky;
+  display: flex;
   width: 100%;
   background-color: red;
-  height: 10%;
+  height: 10vh;
 }
 
 footer {
@@ -34,9 +37,8 @@ aside {
 }
 
 main {
+  flex: 1; /* This makes main take up remaining space */
   width: 100%;
-  min-height: 85vh;
-  height: auto;
   background-color: chartreuse;
 }
 
@@ -49,6 +51,15 @@ li {
   margin-top: 5px;
 }
 
+img {
+  width: auto;
+  height: 100%;
+}
+
+article {
+  width: 100%;
+  height: 100%;
+}
 
 .flexable {
   display: flex;
@@ -56,6 +67,7 @@ li {
 
 .main-container {
   width: 100%;
+  height: 100%;
   flex: 1;
 }
 
@@ -71,7 +83,22 @@ li {
 
 .help-container {
   width: 100%;
+  min-height: 90%;
   flex: 1;
+}
+
+.left {
+  margin-right: auto;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.datetime-container {
+  width: fit-content;
+  min-width: 100px;
+  height: 100%;
 }
 
 code {
