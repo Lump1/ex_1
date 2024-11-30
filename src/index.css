@@ -61,6 +61,10 @@ article {
   height: 100%;
 }
 
+.App {
+  min-height: 100%;
+}
+
 .flexable {
   display: flex;
 }

@@ -1,4 +1,4 @@
-export default class idEnumerator {
+export class idEnumerator {
     static tagsJSON = {};
 
     static tagEnumerate(tagName = "key") {   
@@ -19,3 +19,21 @@ export default class idEnumerator {
         return tagName + '_' + returnVal;
     }
 }
+
+export class urlWorker {
+    static urlCutter(url) {
+      if(url == undefined) return undefined;
+  
+      var start = url.indexOf("//") == -1 ? 0 : url.indexOf("//") + 2;
+      var end = url.indexOf("/", start) == -1 ? url.length : url.indexOf("/", start);
+  
+      url = url.slice(start, end);
+  
+      return url;
+    }
+  
+    static urlEqualChecker(url1, url2) {
+      if(this.urlCutter(url1) === this.urlCutter(url2)) return true;
+      else return false;
+    }
+  }
