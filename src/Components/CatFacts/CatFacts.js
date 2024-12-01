@@ -1,5 +1,6 @@
 import { Menu } from "../Menu/Menu";
 import { useState, useEffect } from "react";
+import { idEnumerator } from "../../helpers";
 
 function useCatFacts(number) {
     const [data, setData] = useState([]);
@@ -30,6 +31,6 @@ function useCatFacts(number) {
     const data = useCatFacts(number);
   
     return (
-      <Menu lists={data}></Menu>
+      <ul>{data.map(liElement => <li id={idEnumerator.tagEnumerate()}>{liElement["text"]}</li>)}</ul>
     );
   }

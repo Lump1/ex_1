@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { Provider, useSelector } from 'react-redux';
+import store from './redux/store';
 import { Header, Content, Footer, Menu, SideBar, CatFacts, DateTime, Logo } from './Components';
 
 function App() {
   return (
-    <div className="App">
-    <Header text="Header" imgUrl="/images/ff26efc7cf45a17a3622d0add92b15d5.jpg">
-    </Header>
-    <div className='flexable column help-container'>
-      <div className='flexable main-container'> 
-        <SideBar text="SideBar" lists={[{text: "someText1"}, {text: "someText2", url: "https://music.youtube.com/watch?v=y88PeNOXS9I&si=CZWXtxhoeOINhLCG"}, {text: "someText3", url: `${window.location.href}documentation`}]} />
-        <Content text="Content">
-
-        </Content>
-      </div>
-      <Footer text="Footer" lists={[{text: "someText1"}, {text: "someText2", url: "https://music.youtube.com/watch?v=y88PeNOXS9I&si=CZWXtxhoeOINhLCG"}, {text: "someText3", url: `${window.location.href}documentation`}]}/>
-    </div>
-
-    </div>
+    <Provider store={store}>
+        <div className="App">
+        <Header text="Header">
+          
+        </Header>
+        <div className='flexable column help-container'>
+          <div className='flexable main-container'> 
+            <SideBar text="SideBar">
+                <Menu />
+            </SideBar>
+            <Content text="Content">
+                <CatFacts number={5}></CatFacts>
+            </Content>
+          </div>
+          <Footer text="Footer">
+            <Menu class="flexable " />
+          </Footer>
+          </div>
+        </div>
+      </Provider>
   );
 }
 

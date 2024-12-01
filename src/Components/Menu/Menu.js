@@ -1,4 +1,5 @@
 import { urlWorker, idEnumerator } from "../../helpers";
+import { useSelector } from "react-redux";
 
 function renderList(element) {
     var target = urlWorker.urlEqualChecker(element.url, window.location.href) == true 
@@ -11,7 +12,9 @@ function renderList(element) {
 } 
 
 export function Menu(props) {
+    const menuArray = useSelector((state) => state.menu.menuArray);
+
     return(
-       <ul className={props.class}>{props.lists.map(liElement => <li id={idEnumerator.tagEnumerate()}>{renderList(liElement)}</li>)}</ul>
+       <ul className={props.class}>{menuArray.map(liElement => <li id={idEnumerator.tagEnumerate()}>{renderList(liElement)}</li>)}</ul>
     );
 }

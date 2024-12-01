@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { updateTime } from '../../redux/slices/clockSlice';
 
 function CurrentDate(props) {
     const options = {
@@ -24,22 +26,23 @@ function CurrentTime(props) {
 }
 
 export function DateTime(props) {
-  const [dateState, setDate] = useState(new Date());
+  // const [dateState, setDate] = useState(new Date());
+  const dispatch = useDispatch(); 
   
     useEffect(() => {
         const effectInterval = setInterval(() => {
-            setDate(new Date());
+            dispatch(updateTime());
         }, 1000);
 
         return () => {
             clearInterval(effectInterval);
         }
-    }, []);
+    }, [dispatch]);
 
     return (
       <div className="flexable right datetime-container">
-        <CurrentDate date={dateState}></CurrentDate>
-        <CurrentTime date={dateState}></CurrentTime>
+        <CurrentDate date={useSelector(state => state.clock.currentTime)}></CurrentDate>
+        <CurrentTime date={useSelector(state => state.clock.currentTime)}></CurrentTime>
       </div>
     );
 }
