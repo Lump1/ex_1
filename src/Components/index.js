@@ -6,5 +6,6 @@ import { Logo } from "./Logo/Logo";
 import { SideBar } from "./SideBar/SideBar";
 import { DateTime } from "./DateTime/DateTime";
 import { CatFacts } from "./CatFacts/CatFacts";
+import { ImageGallery } from "./ImageGallery/ImageGallery";
 
-export {Header, Content, Footer, Menu, Logo, SideBar, DateTime, CatFacts}
+export {Header, Content, Footer, Menu, Logo, SideBar, DateTime, CatFacts, ImageGallery}

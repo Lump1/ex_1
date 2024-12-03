@@ -1,3 +1,4 @@
+
 export class idEnumerator {
     static tagsJSON = {};
 
@@ -37,3 +38,4 @@ export class urlWorker {
       else return false;
     }
   }
+
