@@ -1,0 +1,82 @@
+.before-game-state-container {
+    background-color: black;
+}
+
+.idle-game-state-container {
+    background-color: yellow;
+    
+}
+
+.started-game-state-container {
+    background-color: aqua;
+    display: block;
+}
+
+div.before-game-state-container, 
+div.idle-game-state-container, 
+div.started-game-state-container {
+    width: 680px;
+    height: 420px;
+}
+
+.player-container {
+    width: 25%;
+    height: 120px;
+    position: relative;
+    
+    top: 260px;
+    left: 40px;
+    background-color: aliceblue;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+}
+
+.clear-cell {
+    background-color: transparent;
+}
+
+.full-cell {
+    background-color: black;
+    box-shadow: 1px 1px 3px white, -1px -1px 3px white;
+    border: 1px white solid;
+    box-sizing: border-box;
+}
+
+.game-column {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#gamePlate {
+    position: relative;
+}
+
+.game-container {
+    background-color: rgb(30, 28, 44);
+    padding: 45px;
+    border-radius: 20px;
+    border: 5px rgb(12, 14, 151) solid;
+    width: fit-content;
+    height: fit-content;
+}
+
+.player-container {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    display: flex;
+    background-color: blue;
+    border: 1px white solid;
+    box-sizing: border-box;
+}
+
+.pointer-game {
+    color: aliceblue;
+    margin: auto;
+    text-align: center;
+    font-size: x-large;
+}

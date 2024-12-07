@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    logoUrl: "./images/ff26efc7cf45a17a3622d0add92b15d5.jpg"
+    logoUrl: "./images/pngwing.png"
 };
 
 const logoSlice = createSlice({

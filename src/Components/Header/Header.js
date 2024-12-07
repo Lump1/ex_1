@@ -6,13 +6,14 @@ import store from '../../redux/store';
 export function Header(props) {
     return (
         <header>
-          {props.text}
           <Provider store={store}>
-            <Logo className="left" imageUrl={useSelector(state => state.logo).logoUrl} />
+            <Logo class="left" imageUrl={useSelector(state => state.logo).logoUrl} />
           </Provider>
           
 
           {props.children}
+
+          {props.text}
 
           <DateTime>
           </DateTime>

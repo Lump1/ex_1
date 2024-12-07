@@ -15,5 +15,4 @@ const imagesSlice = createSlice({
 })
 
 export const { uploadImage } = imagesSlice.actions;
-
 export default imagesSlice.reducer;

@@ -4,8 +4,8 @@ import store from '../../redux/store';
 export function Footer(props) {
     return(
         <footer>
-            {props.text}
             {props.children}
+            {props.text}
         </footer>
     );
   }

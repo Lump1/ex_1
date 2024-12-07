@@ -7,5 +7,6 @@ import { SideBar } from "./SideBar/SideBar";
 import { DateTime } from "./DateTime/DateTime";
 import { CatFacts } from "./CatFacts/CatFacts";
 import { ImageGallery } from "./ImageGallery/ImageGallery";
+import { Game } from "./Game/Game";
 
-export {Header, Content, Footer, Menu, Logo, SideBar, DateTime, CatFacts, ImageGallery}
+export {Header, Content, Footer, Menu, Logo, SideBar, DateTime, CatFacts, ImageGallery, Game}

@@ -1,6 +1,8 @@
 html {
   width: 100%;
   height: 100%;
+
+  background-color: rgb(238, 243, 218)
 }
 
 body {
@@ -20,35 +22,57 @@ header {
   position: sticky;
   display: flex;
   width: 100%;
-  background-color: red;
+  background-color: rgb(30, 28, 44);
   height: 10vh;
+  text-align: center;
+
+  color: aliceblue;
+
+  border-radius: 0 0 90px 0;
 }
 
 footer {
   width: 100%;
   height: 5vh;
-  background-color: blue;
+  background-color: rgb(30, 28, 44);
   display: flex;
+
+  color: aliceblue;
 }
 
 aside {
   width: 20vh;
-  background-color: aqua;
+  background-color: rgb(30, 28, 44);
+  padding: 10px;
+  padding-top: 25px;
+
+  color: aliceblue;
 }
 
 main {
   flex: 1; /* This makes main take up remaining space */
   width: 100%;
-  background-color: chartreuse;
+  background-color: rgb(238, 243, 218);
+
+  border-radius: 90px 0 90px 90px;
+
+  padding-left: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 ul {
   margin: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 10px;
+
+  width: fit-content;
 }
 
 li {
-  margin-left: 10px;
-  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 img {
@@ -89,6 +113,8 @@ article {
   width: 100%;
   min-height: 90%;
   flex: 1;
+
+  background-color: rgb(30, 28, 44);
 }
 
 .left {
@@ -103,12 +129,22 @@ article {
   width: fit-content;
   min-width: 100px;
   height: 100%;
+
+  margin-right: 35px;
+  margin-top: 10px;
 }
 
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
+  width: fit-content;
   margin: 10px;
+  margin-right: 50px;
+  padding: 20px;
+
+  border-radius: 20px;
+
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .gallery-image {
@@ -120,13 +156,26 @@ article {
   border: 0px;
   filter: grayscale(1);
 
+  border-radius: 20px;
+
   transition: 0.2s;
 }
 
 .gallery-image:hover {
   filter: grayscale(0);
-  border: 5px solid black;
-  border-radius: 20px;
+  border: 5px solid rgba(0, 0, 0, 0.247);
+  height: 420px;
+  
+}
+
+.logo {
+  box-sizing: border-box;
+  background-color: rgb(160, 177, 98);
+  border: 3px solid rgb(31, 31, 51);
+  filter: invert(1);
+  border-radius: 50%;
+  margin: 5px;
+  margin-left: 20px;
 }
 
 code {

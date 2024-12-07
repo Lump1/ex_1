@@ -1,7 +1,7 @@
 import './App.css';
 import { Provider, useSelector } from 'react-redux';
 import store from './redux/store';
-import { Header, Content, Footer, Menu, SideBar, CatFacts, DateTime, Logo, ImageGallery } from './Components';
+import { Header, Content, Footer, Menu, SideBar, CatFacts, DateTime, Logo, ImageGallery, Game } from './Components';
 
 function App() {
   return (
@@ -18,6 +18,8 @@ function App() {
             <Content text="Content">
                 <CatFacts number={5}></CatFacts>
                 <ImageGallery></ImageGallery>
+
+                <Game></Game>
             </Content>
           </div>
           <Footer text="Footer">
